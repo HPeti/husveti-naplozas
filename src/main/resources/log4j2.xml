@@ -10,17 +10,26 @@
 
         <File name="Kijelentések" fileName="Kijelentések.log" append="false">
             <PatternLayout pattern="${LOG_PATTERN}"/>
-            <MarkerFilter marker="KIJELENT" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Filters>
+                <TimeFilter start="20:00:00" end="05:00:00" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <MarkerFilter marker="KIJELENT" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
         </File>
 
         <File name="Kérelmek" fileName="Kérelmek.log" append="false">
             <PatternLayout pattern="${LOG_PATTERN}"/>
-            <MarkerFilter marker="KÉRELEM" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Filters>
+                <TimeFilter start="20:00:00" end="05:00:00" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <MarkerFilter marker="KÉRELEM" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
         </File>
 
         <File name="NoMarkers" fileName="NoMarkers.log" append="false">
             <PatternLayout pattern="${LOG_PATTERN}"/>
-            <NoMarkerFilter onMatch="ACCEPT" onMismatch="DENY"/>
+            <Filters>
+                <TimeFilter start="20:00:00" end="05:00:00" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <NoMarkerFilter onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
         </File>
 
         <File name="Győrfi_Pál" fileName="Győrfi_Pál.log" append="false">
